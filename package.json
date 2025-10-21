@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:reports":"npx playwright test && npx playwright show-report"
+    "alltest:reports":     "npx playwright test && npx playwright show-report",
+    "chormiumtest:reports":"npx playwright test --project=chromium && npx playwright show-report",
+    "firefoxtest:reports": "npx playwright test --project=firefox && npx playwright show-report",
+    "webkittest:reports":  "npx playwright test --project=webkit && npx playwright show-report",
+    "debugtest:reports":   "npx playwright test --debug && npx playwright show-report"
   },
   "keywords": [],
   "author": "",
