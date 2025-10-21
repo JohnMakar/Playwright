@@ -3,6 +3,7 @@ class CartPage{
     constructor(page){
         this.page=page;
         this.cartItems = page.locator('.cart_item');
+        this.cartPageTitle = page.locator('[data-test = "title"]')
     }
 async isProductInCart(productName) {
     const count = await this.cartItems.count();
@@ -15,5 +16,9 @@ async isProductInCart(productName) {
     }
 
     return false;
+  }
+
+  async isInCart(){
+    return await this.cartPageTitle.innerText();
   }
 }
