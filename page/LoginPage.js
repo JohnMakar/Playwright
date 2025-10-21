@@ -2,9 +2,9 @@ exports.LoginPage =
 class LoginPage{
     constructor (page){
         this.page = page;
-        this.usernamefield = '#user-name';
-        this.passwordField = '#password';
-        this.LoginBtn = '#login-button';
+        this.usernamefield = this.page.locator('#user-name');
+        this.passwordField = this.page.locator('#password');
+        this.LoginBtn = this.page.locator('#login-button');
     }
 
     async GoToLoginPage(){
@@ -12,12 +12,12 @@ class LoginPage{
     }
 
     async InPutLoginData(username,password){
-        await this.page.locator(this.usernamefield).fill(username);
-        await this.page.locator(this.passwordField).fill(password);
+        await this.usernamefield.fill(username);
+        await this.passwordField.fill(password);
     }
 
     async ClickLoginBtn(){
-        await this.page.locator(this.LoginBtn).click();
+        await this.LoginBtn.click();
     }
 
 }
